@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import Command.Commands.HelpCommand;
+import Command.Commands.KickCommand;
 import Command.Commands.MemeCommand;
 import Command.Commands.PingCommand;
 import DiscordBot.Config;
@@ -19,6 +20,7 @@ public class CommandManager {
 		addCommand(new HelpCommand(this));
 		addCommand(new PingCommand());
 		addCommand(new MemeCommand());
+		addCommand(new KickCommand());
 	}
 	
 	private void addCommand(ICommand cmd) {

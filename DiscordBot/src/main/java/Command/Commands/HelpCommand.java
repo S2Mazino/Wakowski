@@ -1,7 +1,6 @@
 package Command.Commands;
 
 import java.awt.Color;
-import java.util.List;
 
 import Command.CommandContext;
 import Command.CommandManager;

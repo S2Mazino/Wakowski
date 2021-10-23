@@ -12,9 +12,6 @@ import org.json.simple.parser.JSONParser;
 import Command.CommandContext;
 import Command.ICommand;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 /**
  * Meme generator that uses heroku meme api, retrieves JSON data and parse it into usable data.

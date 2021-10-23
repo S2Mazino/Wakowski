@@ -44,7 +44,7 @@ public interface ICommandContext {
 		return this.getJDA().getSelfUser();
 	}
 	
-	default Member getSelfMemberr() {
+	default Member getSelfMember() {
 		return this.getGuild().getSelfMember();
 	}
 	

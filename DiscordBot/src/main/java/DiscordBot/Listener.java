@@ -28,11 +28,15 @@ public class Listener extends ListenerAdapter{
 		String prefix = Config.get("prefix");
 		String message = event.getMessage().getContentRaw();
 		
-		if(message.equalsIgnoreCase(prefix + "shutdown") 
-				&& user.getId().equals(Config.get("owner_id"))) { //check if user is owner
-			LOGGER.info("Shutting down");
-			event.getJDA().shutdown();
-			return;
+		if(message.equalsIgnoreCase(prefix + "shutdown")) { 
+			if(user.getId().equals(Config.get("owner_id"))) {//check if user is owner
+				LOGGER.info("Shutting down");
+				event.getJDA().shutdown();
+				return;
+			}else {
+				event.getChannel().sendMessage("Only server owner can use this command").queue();
+				return;
+			}	
 		}
 		
 		if(message.startsWith(prefix)) {

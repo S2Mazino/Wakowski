@@ -17,7 +17,6 @@ repositories {
     // For JDA-Chewtils
     maven { url 'https://m2.chew.pro/releases'}
     //for JIKAN
-    maven { url 'https://jitpack.io' }
     mavenCentral() // for transitive dependencies
     jcenter()
 }
@@ -26,7 +25,6 @@ dependencies {
 	compile 'pw.chew:jda-chewtils:1.22.0'
     compile 'net.dv8tion:JDA:4.3.0_334'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-    implementation 'com.github.Doomsdayrs:Jikan4java:Tag'
     implementation 'ch.qos.logback:logback-classic:1.2.6'
     compile 'io.github.cdimascio:dotenv-java:2.2.0'
 }
