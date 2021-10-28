@@ -47,7 +47,7 @@ public class KickCommand implements ICommand {
 		.kick(memberCalled, reason)
 		.reason(reason) //for audit log
 		.queue(
-				(__) -> ctx.getChannel().sendMessage(memberCalled.getEffectiveName() + " has been kicked.").queue(),
+				(__) -> ctx.getChannel().sendMessage(memberCalled.getUser().getAsTag() + " has been kicked.").queue(),
 				(error) -> ctx.getChannel().sendMessageFormat("Could not kick %s", error.getMessage()).queue()
 		); 
 		
