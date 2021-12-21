@@ -46,7 +46,6 @@ public class PingCommand implements ICommand {
 			}
 			
 		}else {
-			System.out.println("reached else");
 			EmbedBuilder embed = new EmbedBuilder()
 					.setTitle("Ping")
 					.setColor(Color.GREEN);
