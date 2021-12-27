@@ -23,8 +23,8 @@ repositories {
 }
 
 dependencies {
-	compile 'pw.chew:jda-chewtils:1.22.0'
-    compile 'net.dv8tion:JDA:4.3.0_334'
+	compile group: 'pw.chew', name: 'jda-chewtils', version: '1.22.0'
+    compile group: 'net.dv8tion', name: 'JDA', version: '5.0.0-alpha.2'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     implementation 'ch.qos.logback:logback-classic:1.2.6'
     compile 'io.github.cdimascio:dotenv-java:2.2.0'

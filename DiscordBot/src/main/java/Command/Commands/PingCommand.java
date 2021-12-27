@@ -37,11 +37,12 @@ public class PingCommand implements ICommand {
 			final Member memberCalled = ctx.getMessage().getMentionedMembers().get(0);
 			
 			//delete message
+			
 			ctx.getEvent().getMessage().delete();
 			//ping the user
 			for(int i = 0; i < xTimes; i++) {
 				ctx.getEvent().getChannel()
-				.sendMessage(memberCalled.getAsMention())
+				.sendMessage(memberCalled.getAsMention() + ", you have been summoned.")
 				.queue();
 			}
 			

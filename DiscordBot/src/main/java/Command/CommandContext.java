@@ -3,20 +3,20 @@ package Command;
 import java.util.List;
 
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class CommandContext implements ICommandContext {
 	
-	private final GuildMessageReceivedEvent event;
+	private final MessageReceivedEvent event;
 	private final List<String> args;
 	
-	public CommandContext(GuildMessageReceivedEvent event, List<String> args) {
+	public CommandContext(MessageReceivedEvent event, List<String> args) {
 		this.event = event;
 		this.args = args;
 	}
 
 	@Override
-	public GuildMessageReceivedEvent getEvent() {
+	public MessageReceivedEvent getEvent() {
 		return this.event;
 	}
 	

@@ -11,7 +11,7 @@ import Command.Commands.KickCommand;
 import Command.Commands.MemeCommand;
 import Command.Commands.PingCommand;
 import DiscordBot.Config;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class CommandManager {
 	private final List<ICommand> commands = new ArrayList<>();
@@ -55,7 +55,7 @@ public class CommandManager {
 		
 	}
 	
-	public void handle(GuildMessageReceivedEvent event) {
+	public void handle(MessageReceivedEvent event) {
 		String[] split = event.getMessage().getContentRaw().replaceFirst(Config.get("prefix"), "").split("\\s+");
 		
 		String invoke = split[0].toLowerCase();

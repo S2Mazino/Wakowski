@@ -4,19 +4,19 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.sharding.ShardManager;
 
 public interface ICommandContext {
-	GuildMessageReceivedEvent getEvent();
+	MessageReceivedEvent getEvent();
 	
 	default Guild getGuild() {
 		return this.getEvent().getGuild();
 	}
 	
-	default TextChannel getChannel() {
+	default MessageChannel getChannel() {
 		return this.getEvent().getChannel();
 	}
 	

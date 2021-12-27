@@ -14,7 +14,7 @@ import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class Listener extends ListenerAdapter{
@@ -30,7 +30,7 @@ public class Listener extends ListenerAdapter{
 	 * Handles message received with prefixes.
 	 */
 	@Override
-	public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
+	public void onMessageReceived(@Nonnull MessageReceivedEvent event) {
 		User user = event.getAuthor();
 		
 		if(user.isBot()) return;
@@ -93,7 +93,7 @@ public class Listener extends ListenerAdapter{
 			
 			//notify the default channel that their is not a bot-spam channel (to dedicate all bot commands into a single channel)
 			if(botChannels.isEmpty()) {
-				guild.getDefaultChannel().sendMessage("Add a bot-spam channel to see who is leaving.").queue();
+				guild.getDefaultChannel().sendMessage("Add a bot-spam channel to clean chat from bot spam").queue();
 				guild.getDefaultChannel().sendMessage(leave).queue();
 			}else {
 				botChannels.get(0).sendMessage(leave).queue();
